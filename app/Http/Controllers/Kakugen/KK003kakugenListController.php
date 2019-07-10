@@ -19,7 +19,7 @@ class KK003kakugenListController extends Controller
             'searchword' => 'max:100',
         ]);
         
-        $kk_kakugens = Kk_kakugen::where('kakugen_naiyo','LIKE', "%".$request->searchword."%")->orderBy('id', 'asc')->paginate(10);
+        $kk_kakugens = Kk_kakugen::where('kakugen_naiyo','LIKE', "%".$request->searchword."%")->orderBy('id', 'asc')->paginate(5);
 
         return view('kakugen.kk003_kakugen_list', [
             'kk_kakugens' => $kk_kakugens,

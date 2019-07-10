@@ -13,7 +13,7 @@
 
 
 <div class="container">
-    <h1 class="mb-3">■格言を探す</h1>
+    <h1 class="mb-3">格言を探す</h1>
     
     @include('commons.error_messages')
 

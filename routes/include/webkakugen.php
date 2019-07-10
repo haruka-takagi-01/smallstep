@@ -26,13 +26,13 @@ Route::post('/kakugen/complete/', 'Kakugen\KK103kakugenCompleteController@execut
 
 
 // 格言修正画面表示
-Route::get('/kakugen/edit/', 'Kakugen\KK104kakugenEditController@execute')->name('kakugen.edit');
+Route::get('/kakugen/edit/{id}/', 'Kakugen\KK104kakugenEditController@execute')->name('kakugen.edit');
 
 // 格言修正処理
-Route::get('/kakugen/update/', 'Kakugen\KK105kakugenUpdateController@execute')->name('kakugen.update');
+Route::get('/kakugen/update/{id}/', 'Kakugen\KK105kakugenUpdateController@execute')->name('kakugen.update');
 
 // 格言削除処理
-Route::get('/kakugen/delete/', 'Kakugen\KK106kakugenDeleteController@execute')->name('kakugen.delete');
+Route::get('/kakugen/delete/{id}/', 'Kakugen\KK106kakugenDeleteController@execute')->name('kakugen.delete');
 
 // 格言コメント処理
 Route::get('/kakugen/comment/', 'Kakugen\KK201kakugenCommentController@execute')->name('kakugen.comment');

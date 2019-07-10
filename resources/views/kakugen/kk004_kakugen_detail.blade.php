@@ -16,19 +16,23 @@
 
     <div class="row">
 
-        {!! Form::open(['route' => 'kakugen.complete']) !!}
-
-            <div class="form-group">
-                {!! Form::label('label_kakugen_person', '誰の言葉？') !!}
-                {!! Form::label('kakugen_person', nl2br(e($kk_kakugen->kakugen_person))) !!}
-                {!! Form::label('label_kakugen_naiyo', '名言・格言の内容',['class' => 'mt-3']) !!}
-                {!! Form::label('kakugen_naiyo', nl2br(e($kk_kakugen->kakugen_naiyo))) !!}
-            </div>
-
-            {!! Form::submit('格言を修正する', ['class' => 'btn btn-primary']) !!}
+        <table class="table table-bordered">
+            <tr>
+                <th>誰の言葉？</th>
+                <td>{{ $kk_kakugen->kakugen_person }}</td>
+            </tr>
+            <tr>
+                <th>名言・格言の内容</th>
+                <td>nl2br(e($kk_kakugen->kakugen_naiyo))</td>
+            </tr>
+        </table>
+    
+        {!! link_to_route('kakugen.edit', '格言を修正する', ['id' => $message->id], ['class' => 'btn btn-light']) !!}
+    
+        {!! Form::model($message, ['route' => ['kakugen.delete', $message->id], 'method' => 'get']) !!}
+            {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
         {!! Form::close() !!}
-            
-            
+
         {!! Form::open(['route' => 'kakugen.comment']) !!}
 
             <div class="form-group">
