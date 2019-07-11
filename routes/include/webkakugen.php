@@ -10,7 +10,7 @@ Route::get('/kakugen/search/', 'Kakugen\KK002kakugenSearchController@execute')->
 Route::post('/kakugen/list/', 'Kakugen\KK003kakugenListController@execute')->name('kakugen.list');
 
 // 格言詳細画面表示
-Route::get('/kakugen/detail/', 'Kakugen\KK004kakugenDetailController@execute')->name('kakugen.detail');
+Route::get('/kakugen/detail/{id}/', 'Kakugen\KK004kakugenDetailController@execute')->name('kakugen.detail');
 
 
 

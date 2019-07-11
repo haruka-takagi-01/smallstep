@@ -17,6 +17,7 @@ class KK004kakugenDetailController extends Controller
     {
         $kk_kakugens = Kk_kakugen::find($id);
 
+        //dd($kk_kakugens);
         return view('kakugen.kk004_kakugen_detail', [
             'kk_kakugens' => $kk_kakugens,
         ]);

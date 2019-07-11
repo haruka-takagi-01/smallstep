@@ -15,7 +15,7 @@
     <h1 class="mb-3">名言/格言　詳細</h1>
 
     <div class="row">
-
+        @foreach ($kk_kakugens as $kk_kakugen)
         <table class="table table-bordered">
             <tr>
                 <th>誰の言葉？</th>
@@ -26,6 +26,7 @@
                 <td>nl2br(e($kk_kakugen->kakugen_naiyo))</td>
             </tr>
         </table>
+        
     
         {!! link_to_route('kakugen.edit', '格言を修正する', ['id' => $message->id], ['class' => 'btn btn-light']) !!}
     
@@ -42,6 +43,7 @@
 
             {!! Form::submit('コメントする', ['class' => 'btn btn-primary']) !!}
         {!! Form::close() !!}
+        @endforeach
 
     </div>
 

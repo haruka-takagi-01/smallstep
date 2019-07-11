@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Kk_kakugen; 
 
-class KK004kakugenEditController extends Controller
+class KK104kakugenEditController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class KK004kakugenEditController extends Controller
     {
         $kk_kakugens = Kk_kakugen::find($id);
 
-        return view('kakugen.kk004_kakugen_edit', [
+        return view('kakugen.kk104_kakugen_edit', [
             'kk_kakugens' => $kk_kakugens,
         ]);
 
