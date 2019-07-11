@@ -12,30 +12,24 @@
 
 
 <div class="container">
-    <h2 class="mb-3">あなたにおすすめの格言</h2>
-    <div class="row">
-        <div class="card col-11 mb-3 mx-auto">
-            <div class="card-body">
-                <h4 class="card-title">もう終わりだと思うのも、さあ始まりだと思うのも、どちらも自分だ</h4>
-                <p class="card-text">フェデリコ・フェリーニ</p>
-            </div>
-        </div>
-        <div class="card col-11 mb-3 mx-auto">
-            <div class="card-body">
-                <h4 class="card-title">もう終わりだと思うのも、さあ始まりだと思うのも、どちらも自分だ</h4>
-                <p class="card-text">フェデリコ・フェリーニ</p>
-            </div>
-        </div>
-        <div class="card col-11 mb-3 mx-auto">
-            <div class="card-body">
-                <h4 class="card-title">もう終わりだと思うのも、さあ始まりだと思うのも、どちらも自分だ</h4>
-                <p class="card-text">フェデリコ・フェリーニ</p>
-            </div>
+    <h2 class="mb-3">おすすめの格言</h2>
+    <div class="list-group col-12">
+        <div class="row mx-auto">
+            @foreach ($kk_kakugens as $kk_kakugen)
+    
+                <div class="card col-11 mb-3 mx-auto">
+                    <div class="card-body">
+                        <h4 class="card-title">{!! link_to_route('kakugen.detail', nl2br(e($kk_kakugen->kakugen_naiyo)),['id' => $kk_kakugen->id] ,['class' => 'text-dark']) !!}</h4>
+                        <p class="card-text">{!! link_to_route('kakugen.detail', nl2br(e($kk_kakugen->kakugen_person)),['id' => $kk_kakugen->id] ,['class' => 'text-dark']) !!}</p>
+                    </div>
+                </div>
+    
+            @endforeach
         </div>
     </div>
 
     <div class="row">
-        <div class="card col-sm-5 m-3 p-0 mx-auto">
+        <div class="card col-sm-5 my-3 p-0 mx-auto">
           <div class="card-header m-0">
             <br>
           </div>
@@ -44,7 +38,7 @@
             <p class="card-text">あなたの気に入る、座右の銘となる言葉を探してみましょう</p>
           </div>
         </div>
-        <div class="card col-sm-5 m-3 p-0 mx-auto">
+        <div class="card col-sm-5 my-3 p-0 mx-auto">
           <div class="card-header">
             <br>
           </div>

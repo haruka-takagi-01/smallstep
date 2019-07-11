@@ -115,7 +115,7 @@ return [
     'attributes' => [
         'email' => 'メールアドレス',
         'password' => 'パスワード',
-        'searchword' => 'キーワード',
+        'keyword' => 'キーワード',
     ],
 
 ];

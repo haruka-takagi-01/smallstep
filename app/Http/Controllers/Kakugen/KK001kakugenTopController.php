@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Kakugen;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Kk_kakugen;
 
 class KK001kakugenTopController extends Controller
 {
@@ -14,8 +15,12 @@ class KK001kakugenTopController extends Controller
      */
     public function execute()
     {
-        //
-        return view('kakugen.kk001_kakugen');
+
+        $kk_kakugens = Kk_kakugen::take(2)->get();
+
+        return view('kakugen.kk001_kakugen', [
+            'kk_kakugens' => $kk_kakugens,
+        ]);
     }
 
     /**

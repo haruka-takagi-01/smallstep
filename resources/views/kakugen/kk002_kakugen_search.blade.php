@@ -19,11 +19,11 @@
 
     <div class="row">
         <div class="col-6 p-3">
-            {!! Form::open(['route' => 'kakugen.list']) !!}
+            {!! Form::open(['route' => 'kakugen.list','method' => 'GET']) !!}
         
                 <div class="form-group">
-                    {!! Form::label('label_searchword', 'キーワード:') !!}
-                    {!! Form::text('searchword', null, ['class' => 'form-control']) !!}
+                    {!! Form::label('label_keyword', 'キーワード:') !!}
+                    {!! Form::text('keyword', null, ['class' => 'form-control']) !!}
                 </div>
 
                 {!! Form::submit('格言を探す', ['class' => 'btn btn-primary']) !!}

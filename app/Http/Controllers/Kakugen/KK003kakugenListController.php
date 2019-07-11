@@ -16,10 +16,10 @@ class KK003kakugenListController extends Controller
     public function execute(Request $request)
     {
         $this->validate($request, [
-            'searchword' => 'max:100',
+            'keyword' => 'max:100',
         ]);
         
-        $kk_kakugens = Kk_kakugen::where('kakugen_naiyo','LIKE', "%".$request->searchword."%")->orderBy('id', 'asc')->paginate(5);
+        $kk_kakugens = Kk_kakugen::where('kakugen_naiyo','LIKE', "%".$request->keyword."%")->orderBy('id', 'asc')->paginate(5);
 
         return view('kakugen.kk003_kakugen_list', [
             'kk_kakugens' => $kk_kakugens,

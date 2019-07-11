@@ -7,7 +7,8 @@ Route::get('/kakugen/', 'Kakugen\KK001kakugenTopController@execute')->name('kaku
 Route::get('/kakugen/search/', 'Kakugen\KK002kakugenSearchController@execute')->name('kakugen.search');
 
 // 格言一覧画面表示
-Route::post('/kakugen/list/', 'Kakugen\KK003kakugenListController@execute')->name('kakugen.list');
+// Route::post('/kakugen/list/', 'Kakugen\KK003kakugenListController@execute')->name('kakugen.list');
+Route::get('/kakugen/list/{keyword}/', 'Kakugen\KK003kakugenListController@execute')->name('kakugen.list');
 
 // 格言詳細画面表示
 Route::get('/kakugen/detail/{id}/', 'Kakugen\KK004kakugenDetailController@execute')->name('kakugen.detail');

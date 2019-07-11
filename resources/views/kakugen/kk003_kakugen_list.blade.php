@@ -27,7 +27,7 @@
 
             @endforeach
         </div>
-        <div class="col-12 mx-auto">
+        <div class="col-12">
             {{ $kk_kakugens->render('pagination::bootstrap-4') }}
         </div>  
     </div>
