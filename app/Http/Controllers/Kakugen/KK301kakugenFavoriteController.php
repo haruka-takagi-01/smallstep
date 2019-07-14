@@ -14,12 +14,14 @@ class KK301kakugenFavoriteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function execute($id)
+    public function execute(Request $request,$id)
     {
         $kk_user_favorite = new KkUserFavorite();
         $kk_user_favorite->kakugen_id = $id;
         $kk_user_favorite->user_id = \Auth::id();
         $kk_user_favorite->save();
+
+        $request->session()->flash('flashmessage', 'お気に入りに登録しました');
 
         $previous_url = url()->previous();
         if (strpos($previous_url,"kakugen/list")){

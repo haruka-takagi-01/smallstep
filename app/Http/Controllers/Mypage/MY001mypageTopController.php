@@ -18,6 +18,7 @@ class MY001mypageTopController extends Controller
 
         $kk_kakugens = KkKakugen::select()
                     ->join('kk_user_favorites','kk_user_favorites.kakugen_id','=','kk_kakugens.id')
+                    ->where('kk_user_favorites.user_id','=', \Auth::id())
                     ->orderBy('kk_user_favorites.kakugen_id', 'asc')
                     ->get();
 

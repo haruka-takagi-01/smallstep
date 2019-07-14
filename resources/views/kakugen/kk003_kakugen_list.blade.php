@@ -10,8 +10,6 @@
 @section('content')
 
 @if(Session::has('flashmessage'))
-
-
     <!-- モーダルウィンドウの中身 -->
     <div class="modal fade" id="modal_box" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
@@ -37,9 +35,9 @@
             $('#modal_box').addClass('show');
         });
     </script>
-    
-
 @endif
+
+
 
 <div class="container p-0">
     <div class="row">

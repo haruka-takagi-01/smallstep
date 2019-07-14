@@ -29,10 +29,11 @@ class KK201kakugenCommentController extends Controller
         $kk_user_comments->user_id = \Auth::id();
         $kk_user_comments->comment_naiyo = $request->kakugen_comment;
         $kk_user_comments->save();
+
+        $request->session()->flash('flashmessage', 'コメントを登録しました');
+        return redirect()->route('kakugen.detail', ['id' => $id], $status = 302);
         
         $kk_kakugens = KkKakugen::find($id);
-
-
         $kk_user_comments = KkUserComment::where('kakugen_id','=', $id)->get();
         return view('kakugen.kk004_kakugen_detail', [
             'kk_kakugens' => $kk_kakugens,
