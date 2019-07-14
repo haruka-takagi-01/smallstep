@@ -13,7 +13,10 @@
 
 
 <div class="container">
-    <h1 class="mb-3">格言の登録が完了しました</h1>
+    
+    <div class="row">
+        <h1 class="mb-3">格言の登録が完了しました</h1>
+    </div>
 
 </div>
 

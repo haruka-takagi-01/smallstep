@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Kakugen;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Kk_kakugen;
+use App\KkKakugen;
 
 class KK101kakugenInputController extends Controller
 {

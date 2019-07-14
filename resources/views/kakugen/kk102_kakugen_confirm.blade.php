@@ -12,7 +12,9 @@
 
 
 <div class="container">
-    <h1 class="mb-3">名言/格言　登録確認</h1>
+    <div class="row">
+        <h1 class="mb-3">名言/格言　登録確認</h1>
+    </div>
 
     <div class="row">
 

@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Kakugen;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\KkKakugen;
-use App\KkUserComment;
+use App\KkUserFavorite;
 
-class KK004kakugenDetailController extends Controller
+class KK301kakugenFavoriteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,15 +16,19 @@ class KK004kakugenDetailController extends Controller
      */
     public function execute($id)
     {
-        $kk_kakugens = KkKakugen::find($id);
-        $kk_user_comments = KkUserComment::where('kakugen_id','=', $id)
-                                         ->where('user_id','=', \Auth::id());
 
+        $kk_user_favorite = new KkUserFavorite();
+        $kk_user_favorite->kakugen_id = $id;
+
+        //★仮　$kk_user_cavorite>user_id = $request->user_id;
+        $kk_user_favorite->user_id = 1;
+        
+        $kk_user_favorite->save();
+        
+        $kk_kakugens = KkKakugen::find($id);
         return view('kakugen.kk004_kakugen_detail', [
             'kk_kakugens' => $kk_kakugens,
-            'kk_user_comments' => $kk_user_comments,
         ]);
-
     }
 
 }

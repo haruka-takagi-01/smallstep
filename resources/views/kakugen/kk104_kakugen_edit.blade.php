@@ -12,22 +12,23 @@
 
 
 <div class="container">
-    <h1 class="mb-3">名言/格言　修正</h1>
-
+    <div class="row">
+        <h1 class="mb-3">名言/格言　修正</h1>
+    </div>
     <div class="row">
 
-        {!! Form::open(['route' => 'kakugen.complete']) !!}
+        {!! Form::model($kk_kakugens, ['route' => ['kakugen.update', $kk_kakugens->id], 'method' => 'post']) !!}
 
             <div class="form-group">
                 {!! Form::label('label_kakugen_person', '誰の言葉？') !!}
-                {!! Form::label('kakugen_person', nl2br(e($kk_kakugen->kakugen_person))) !!}
-                {!! Form::label('label_kakugen_naiyo', '名言・格言の内容',['class' => 'mt-3']) !!}
-                {!! Form::label('kakugen_naiyo', nl2br(e($kk_kakugen->kakugen_naiyo))) !!}
-            </div>
-            {{Form::hidden('kakugen_person', nl2br(e($kk_kakugen->kakugen_person)))}}
-            {{Form::hidden('kakugen_naiyo',  nl2br(e($kk_kakugen->kakugen_naiyo)))}}
+                {!! Form::text('kakugen_person', null, ['class' => 'form-control']) !!}
 
-            {!! Form::submit('格言を登録する', ['class' => 'btn btn-primary']) !!}
+                {!! Form::label('label_kakugen_naiyo', '名言・格言の内容',['class' => 'mt-3']) !!}
+                {!! Form::textarea('kakugen_naiyo', null, ['class' => 'form-control']) !!}
+                <p class="help-block">※5000文字以内</p>
+            </div>
+
+            {!! Form::submit('修正する', ['class' => 'btn btn-primary']) !!}
 
         {!! Form::close() !!}
     </div>

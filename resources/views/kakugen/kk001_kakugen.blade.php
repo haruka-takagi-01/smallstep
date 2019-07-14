@@ -13,11 +13,14 @@
 
 <div class="container">
     <h2 class="mb-3">おすすめの格言</h2>
+    <div class="row">
+        <h1 class="mb-3">名言/格言　検索結果一覧</h1>
+    </div>
     <div class="list-group col-12">
         <div class="row mx-auto">
             @foreach ($kk_kakugens as $kk_kakugen)
     
-                <div class="card col-11 mb-3 mx-auto">
+                <div class="card col-12 mb-3 mx-auto">
                     <div class="card-body">
                         <h4 class="card-title">{!! link_to_route('kakugen.detail', nl2br(e($kk_kakugen->kakugen_naiyo)),['id' => $kk_kakugen->id] ,['class' => 'text-dark']) !!}</h4>
                         <p class="card-text">{!! link_to_route('kakugen.detail', nl2br(e($kk_kakugen->kakugen_person)),['id' => $kk_kakugen->id] ,['class' => 'text-dark']) !!}</p>

@@ -7,10 +7,9 @@ Route::get('/kakugen/', 'Kakugen\KK001kakugenTopController@execute')->name('kaku
 Route::get('/kakugen/search/', 'Kakugen\KK002kakugenSearchController@execute')->name('kakugen.search');
 
 // 格言一覧画面表示
-// Route::post('/kakugen/list/', 'Kakugen\KK003kakugenListController@execute')->name('kakugen.list');
-Route::get('/kakugen/list/{keyword}/', 'Kakugen\KK003kakugenListController@execute')->name('kakugen.list');
+Route::get('/kakugen/list/', 'Kakugen\KK003kakugenListController@execute')->name('kakugen.list');
 
-// 格言詳細画面表示
+// 格言詳細画面表示（格言テーブル.ID）
 Route::get('/kakugen/detail/{id}/', 'Kakugen\KK004kakugenDetailController@execute')->name('kakugen.detail');
 
 
@@ -26,17 +25,31 @@ Route::post('/kakugen/confirm/', 'Kakugen\KK102kakugenConfirmController@execute'
 Route::post('/kakugen/complete/', 'Kakugen\KK103kakugenCompleteController@execute')->name('kakugen.complete');
 
 
-// 格言修正画面表示
+// 格言修正画面表示（格言テーブル.ID）
 Route::get('/kakugen/edit/{id}/', 'Kakugen\KK104kakugenEditController@execute')->name('kakugen.edit');
 
-// 格言修正処理
-Route::get('/kakugen/update/{id}/', 'Kakugen\KK105kakugenUpdateController@execute')->name('kakugen.update');
+// 格言修正処理（格言テーブル.ID）
+Route::post('/kakugen/update/{id}/', 'Kakugen\KK105kakugenUpdateController@execute')->name('kakugen.update');
 
-// 格言削除処理
+// 格言削除処理（格言テーブル.ID）
 Route::get('/kakugen/delete/{id}/', 'Kakugen\KK106kakugenDeleteController@execute')->name('kakugen.delete');
 
-// 格言コメント処理
-Route::get('/kakugen/comment/', 'Kakugen\KK201kakugenCommentController@execute')->name('kakugen.comment');
+// 格言コメント処理（格言テーブル.ID）
+Route::post('/kakugen/comment/{id}/', 'Kakugen\KK201kakugenCommentController@execute')->name('kakugen.comment');
+
+// 格言お気に入り登録（格言テーブル.ID）
+Route::get('/kakugen/favorite/{id}', 'Kakugen\KK301kakugenFavoriteController@execute')->name('kakugen.favorite');
+
+
+
+
+
+
+
+
+
+
+
 
 
 

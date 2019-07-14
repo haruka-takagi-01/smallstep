@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Kakugen;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Kk_kakugen; 
+use App\KkKakugen;
 
 class KK106kakugenDeleteController extends Controller
 {
@@ -15,11 +15,10 @@ class KK106kakugenDeleteController extends Controller
      */
     public function execute($id)
     {
-        $kk_kakugens = Kk_kakugen::find($id);
+        $kk_kakugens = KkKakugen::find($id);
         $kk_kakugens->delete();
 
         return redirect('/');
-
     }
 
 }

@@ -13,8 +13,11 @@
 
 
 <div class="container">
-    <h1 class="mb-3">■格言を登録する</h1>
-    
+    <div class="row">
+        <h1 class="mb-3">格言を登録する</h1>
+    </div>
+
+
     @include('commons.error_messages')
 
     <div class="row">
@@ -26,8 +29,7 @@
                     {!! Form::text('kakugen_person', null, ["placeholder"=>"例）エジソン",'class' => 'form-control']) !!}
 
                     {!! Form::label('label_kakugen_naiyo', '名言・格言の内容',['class' => 'mt-3']) !!}
-                    
-                    <textarea name="kakugen_naiyo" id="kakugen_naiyo" cols="45" rows="8" placeholder="例）天才とは1%のひらめきと99%の努力である" class="form-control"></textarea>
+                    {!! Form::textarea('kakugen_naiyo', null, ["placeholder"=>"例）天才とは1%のひらめきと99%の努力である",'class' => 'form-control']) !!}
                     <p class="help-block">※5000文字以内</p>
                 </div>
 

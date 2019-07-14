@@ -1,4 +1,14 @@
 @extends('layouts.app')
+ 
+@section('title', 'パスワードリセット')
+@section('keywords', 'A,B,C')
+@section('description', '説明文')
+@section('pagecss',"page.css")
+
+@include('commons.head')
+
+@section('content')
+
 
 @section('content')
 <div class="container">
@@ -68,3 +78,5 @@
     </div>
 </div>
 @endsection
+
+@include('commons.footer')

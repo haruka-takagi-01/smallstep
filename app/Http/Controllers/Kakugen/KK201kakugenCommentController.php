@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Kakugen;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Kk_kakugen; 
+use App\KkKakugen;
+use App\KkUserComment;
+
+
 
 class KK201kakugenCommentController extends Controller
 {
@@ -13,14 +16,24 @@ class KK201kakugenCommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function execute($id)
+    public function execute(Request $request, $id)
     {
-        $kk_kakugens = Kk_kakugen::find($id);
-
-        return view('kakugen.kk201_kakugen_comment', [
-            'kk_kakugens' => $kk_kakugens,
+        $this->validate($request, [
+            'kakugen_comment' => 'required|max:5000',
         ]);
-
+        
+        $kk_user_comments = new KkUserComment();
+        $kk_user_comments->kakugen_id = $id;
+        $kk_user_comments->user_id = \Auth::id();
+        $kk_user_comments->comment_naiyo = $request->kakugen_comment;
+        $kk_user_comments->save();
+        
+        $kk_kakugens = KkKakugen::find($id);
+        return view('kakugen.kk004_kakugen_detail', [
+            'kk_kakugens' => $kk_kakugens,
+            'kk_user_comments' => $kk_user_comments,
+        ]);
     }
 
 }
+

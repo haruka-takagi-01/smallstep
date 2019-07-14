@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Kk_kakugen extends Model
+class KkUserFavorite extends Model
 {
     //
 }

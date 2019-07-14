@@ -6,3 +6,8 @@ h1{
 .pagination {
     justify-content: center;
 }
+
+.tag li{
+    display:inline-block;
+    list-style: none;
+}
