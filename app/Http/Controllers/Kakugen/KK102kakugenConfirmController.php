@@ -17,7 +17,7 @@ class KK102kakugenConfirmController extends Controller
     {
 
         $this->validate($request, [
-            'kakugen_person' => 'max:100',
+            'kakugen_person' => 'required|max:100',
             'kakugen_naiyo' => 'required|max:5000',
         ]);
         

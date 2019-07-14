@@ -16,7 +16,7 @@ class KK105kakugenUpdateController extends Controller
     public function execute(Request $request, $id)
     {
         $this->validate($request, [
-            'kakugen_person' => 'max:100',
+            'kakugen_person' => 'required|max:100',
             'kakugen_naiyo' => 'required|max:5000',
         ]);
         

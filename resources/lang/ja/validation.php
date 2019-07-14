@@ -116,7 +116,7 @@ return [
         'email' => 'メールアドレス',
         'password' => 'パスワード',
         'keyword' => 'キーワード',
-        'kakugen_person' => '言った人',
+        'kakugen_person' => '誰の言葉？',
         'kakugen_naiyo' => '格言内容',
     ],
 
