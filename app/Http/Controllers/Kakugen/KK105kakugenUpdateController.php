@@ -33,11 +33,13 @@ class KK105kakugenUpdateController extends Controller
         //return redirect()->to('kakugen.kk003_kakugen_list', [
         //    'kk_kakugens' => $kk_kakugens,
         //]);
-
+        
         $request->session()->flash('flashmessage', '修正が完了しました');
-        return view('kakugen.kk003_kakugen_list', [
-            'kk_kakugens' => $kk_kakugens,
-        ]);
+        return redirect()->route('kakugen.list', [], $status = 302);
+        
+        //return view('kakugen.kk003_kakugen_list', [
+        //    'kk_kakugens' => $kk_kakugens,
+        //]);
 
     }
 

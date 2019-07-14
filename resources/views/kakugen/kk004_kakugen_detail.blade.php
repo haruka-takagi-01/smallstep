@@ -41,23 +41,25 @@
                     {!! Form::close() !!}
                 </div>
             @endif
+    </div>
 
-            <div class="row">
-                
-                <div class="list-group col-12">
-                    @foreach ($kk_user_comments as $kk_user_comment)
-                        
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h4 class="card-title">{{$kk_user_comment->user_id}}</h4>
-                                <p class="card-text">{{$kk_user_comment->comment_naiyo}}</p>
-                            </div>
-                        </div>
+    <div class="row">
         
-                    @endforeach
+        <div class="list-group col-12">
+            @foreach ($kk_user_comments as $kk_user_comment)
+                
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <!--<h4 class="card-title">{{$kk_user_comment->user_id}}</h4>-->
+                        <p class="card-text">{{$kk_user_comment->comment_naiyo}}</p>
+                    </div>
                 </div>
-            </div>
 
+            @endforeach
+        </div>
+    </div>
+
+    <div class="row">
             @if (Auth::check())
                 <div class="col-12">
                     {!! Form::open(['route' => ['kakugen.comment', $kk_kakugens->id], 'method' => 'post']) !!}
@@ -86,7 +88,6 @@
                     <small>※コメントされる場合、ログインしてご利用ください </ small>
                 </div>
             @endif
-
     </div>
 
 </div>

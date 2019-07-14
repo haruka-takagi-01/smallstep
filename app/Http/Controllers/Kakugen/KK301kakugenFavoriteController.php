@@ -23,17 +23,22 @@ class KK301kakugenFavoriteController extends Controller
 
         $previous_url = url()->previous();
         if (strpos($previous_url,"kakugen/list")){
-            $kk_kakugens = KkKakugen::orderBy('id', 'asc')->paginate(5);
-            return redirect()->route('kakugen.list', ['kk_kakugens' => $kk_kakugens], $status = 302);
-            return view('kakugen.kk003_kakugen_list', [
-                'kk_kakugens' => $kk_kakugens,
-            ]);
+            return redirect()->route('kakugen.list', [], $status = 302);
+            
+            //$kk_kakugens = KkKakugen::orderBy('id', 'asc')->paginate(5);
+            //return redirect()->route('kakugen.list', ['kk_kakugens' => $kk_kakugens], $status = 302);
+            //return view('kakugen.kk003_kakugen_list', [
+            //    'kk_kakugens' => $kk_kakugens,
+            //]);
         }else{
-            dd($previous_url);
-            $kk_kakugens = KkKakugen::find($id);
-            return view('kakugen.kk004_kakugen_detail', [
-                'kk_kakugens' => $kk_kakugens,
-            ]);
+            return redirect()->route('kakugen.detail', ['id' => $id], $status = 302);
+            
+            //$kk_kakugens = KkKakugen::find($id);
+            //return redirect()->route('kakugen.detail', ['kk_kakugens' => $kk_kakugens], $status = 302);
+            //{!! link_to_route('kakugen.detail', e($kk_kakugen->kakugen_naiyo),['id' => $kk_kakugen->id]) !!}
+            //return view('kakugen.kk004_kakugen_detail', [
+            //    'kk_kakugens' => $kk_kakugens,
+            //]);
         }    
     }
 

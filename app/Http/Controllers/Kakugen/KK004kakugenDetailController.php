@@ -17,8 +17,8 @@ class KK004kakugenDetailController extends Controller
     public function execute($id)
     {
         $kk_kakugens = KkKakugen::find($id);
-        $kk_user_comments = KkUserComment::where('kakugen_id','=', $id)
-                                         ->where('user_id','=', \Auth::id());
+
+        $kk_user_comments = KkUserComment::where('kakugen_id','=', $id)->get();
 
         return view('kakugen.kk004_kakugen_detail', [
             'kk_kakugens' => $kk_kakugens,

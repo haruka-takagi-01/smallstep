@@ -31,12 +31,13 @@ class KK201kakugenCommentController extends Controller
         $kk_user_comments->save();
         
         $kk_kakugens = KkKakugen::find($id);
-        
+
+
+        $kk_user_comments = KkUserComment::where('kakugen_id','=', $id)->get();
         return view('kakugen.kk004_kakugen_detail', [
             'kk_kakugens' => $kk_kakugens,
             'kk_user_comments' => $kk_user_comments,
         ]);
-        }
     }
 
 }

@@ -21,8 +21,8 @@
     
                 <div class="card col-12 mb-3 mx-auto">
                     <div class="card-body">
-                        <h4 class="card-title">{!! link_to_route('kakugen.detail', nl2br(e($kk_kakugen->kakugen_naiyo)),['id' => $kk_kakugen->id] ,['class' => 'text-dark']) !!}</h4>
-                        <p class="card-text">{!! link_to_route('kakugen.detail', nl2br(e($kk_kakugen->kakugen_person)),['id' => $kk_kakugen->id] ,['class' => 'text-dark']) !!}</p>
+                        <h4 class="card-title">{!! link_to_route('kakugen.detail', e($kk_kakugen->kakugen_naiyo),['id' => $kk_kakugen->id] ,['class' => 'text-dark']) !!}</h4>
+                        <p class="card-text">{!! link_to_route('kakugen.detail', e($kk_kakugen->kakugen_person),['id' => $kk_kakugen->id] ,['class' => 'text-dark']) !!}</p>
                     </div>
                 </div>
     

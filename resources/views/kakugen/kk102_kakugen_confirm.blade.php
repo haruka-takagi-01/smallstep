@@ -21,11 +21,19 @@
         {!! Form::open(['route' => 'kakugen.complete']) !!}
 
             <div class="form-group">
-                {!! Form::label('label_kakugen_person', '誰の言葉？') !!}
-                {!! Form::label('kakugen_person', nl2br(e($kk_kakugen->kakugen_person))) !!}
-                {!! Form::label('label_kakugen_naiyo', '名言・格言の内容',['class' => 'mt-3']) !!}
-                {!! Form::label('kakugen_naiyo', nl2br(e($kk_kakugen->kakugen_naiyo))) !!}
+                
+                <table class="table table-bordered">
+                    <tr>
+                        <th>誰の言葉？</th>
+                        <td>{{ $kk_kakugen->kakugen_person}}</td>
+                    </tr>
+                    <tr>
+                        <th>名言・格言の内容</th>
+                        <td>{!! nl2br(e($kk_kakugen->kakugen_naiyo))!!}</td>
+                    </tr>
+                </table>
             </div>
+            
             {{Form::hidden('kakugen_person', nl2br(e($kk_kakugen->kakugen_person)))}}
             {{Form::hidden('kakugen_naiyo',  nl2br(e($kk_kakugen->kakugen_naiyo)))}}
 
