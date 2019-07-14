@@ -17,13 +17,9 @@ class MY001mypageTopController extends Controller
     {
 
         $kk_kakugens = KkKakugen::select()
-                    ->join('kk_user_comments','kk_user_comments.kakugen_id','=','kk_kakugens.id')
-                    ->orderBy('kk_user_comments.kakugen_id', 'asc')
+                    ->join('kk_user_favorites','kk_user_favorites.kakugen_id','=','kk_kakugens.id')
+                    ->orderBy('kk_user_favorites.kakugen_id', 'asc')
                     ->get();
-
-        //$employees = \DB::table('employees')
-        //->join('depts','employees.dept_id','=','depts.dept_id')
-        //->get();
 
         return view('mypage.my001_mypage_top', [
             'kk_kakugens' => $kk_kakugens,
