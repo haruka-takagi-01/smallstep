@@ -22,6 +22,8 @@ class KK201kakugenCommentController extends Controller
             'kakugen_comment' => 'required|max:5000',
         ]);
         
+        
+        
         $kk_user_comments = new KkUserComment();
         $kk_user_comments->kakugen_id = $id;
         $kk_user_comments->user_id = \Auth::id();
@@ -29,10 +31,12 @@ class KK201kakugenCommentController extends Controller
         $kk_user_comments->save();
         
         $kk_kakugens = KkKakugen::find($id);
+        
         return view('kakugen.kk004_kakugen_detail', [
             'kk_kakugens' => $kk_kakugens,
             'kk_user_comments' => $kk_user_comments,
         ]);
+        }
     }
 
 }

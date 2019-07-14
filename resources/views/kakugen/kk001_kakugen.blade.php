@@ -12,9 +12,8 @@
 
 
 <div class="container">
-    <h2 class="mb-3">おすすめの格言</h2>
     <div class="row">
-        <h1 class="mb-3">名言/格言　検索結果一覧</h1>
+        <h1 class="mb-3">おすすめの格言</h1>
     </div>
     <div class="list-group col-12">
         <div class="row mx-auto">
