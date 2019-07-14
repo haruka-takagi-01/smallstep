@@ -28,11 +28,11 @@ class KK003kakugenListController extends Controller
         //$kk_user_favorites = KkUserFavorite::where('kakugen_id','=', $id)
         //                ->orwhere('user_id','=', \Auth::id());
 
-        $kk_kakugens = KkKakugen::select()
-                        ->leftjoin('kk_user_favorites','kk_kakugens.id','=','kk_user_favorites.kakugen_id')
-                        ->where('kakugen_naiyo','LIKE', "%".$keyword."%")
-                        ->orwhere('kakugen_person','LIKE', "%".$keyword."%")
-                        ->orderBy('kk_kakugens.id', 'asc')->paginate(5);
+        //$kk_kakugens = KkKakugen::select()
+        //                ->leftjoin('kk_user_favorites','kk_kakugens.id','=','kk_user_favorites.kakugen_id')
+        //                ->where('kakugen_naiyo','LIKE', "%".$keyword."%")
+        //                ->orwhere('kakugen_person','LIKE', "%".$keyword."%")
+        //                ->orderBy('kk_kakugens.id', 'asc')->paginate(5);
 
 
         return view('kakugen.kk003_kakugen_list', [
